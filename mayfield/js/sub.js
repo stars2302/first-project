@@ -1,34 +1,34 @@
 $(function(){
-  //header 
+  //header sticky
   $(window).scroll(function(){
     if($(this).scrollTop()>900){
-      $("#main_header_wrap").addClass('sticky');
+      $(".main_header_wrap").addClass('sticky');
     }else{
-      $("#main_header_wrap").removeClass('sticky');
+      $(".main_header_wrap").removeClass('sticky');
     }
   });
 
   $(window).scroll(function(){
     if($(this).scrollTop()>0){
-      $("#header_wrap").addClass('top');
+      $(".header_wrap").addClass('top');
     }else{
-      $("#header_wrap").removeClass('top');
+      $(".header_wrap").removeClass('top');
     }
   });
 
   // reservation modal
-  $("#reservation_btn").click(function(){
-    $("#modal_wrap").css("z-index","100000");
-    $("header").hide();
+  $(".reservation_btn").click(function(){
+    $(".modal_wrap").css("z-index","100000");
+    $(".header").hide();
     $("body").css("overflow","hidden");
-    $("#modal_wrap").fadeIn();
+    $(".modal_wrap").fadeIn();
     
   });
-  $("#modal_wrap #close_btn button").click(function(){
-    $("header").show();
+  $(".modal_wrap .close_btn button").click(function(){
+    $(".header").show();
     $("body").css({"overflox-x":"hidden","overflow-y":"auto"});
-    $("#main_slide .slide .slide_btns").css("z-index","10");
-    $("#modal_wrap").fadeOut();
+    $(".main_slide .slide .slide_btns").css("z-index","10");
+    $(".modal_wrap").fadeOut();
   });
 
   var a = 0;
@@ -43,17 +43,17 @@ $(function(){
   });
 
   //menu
-  $("#header_btns #menu_btn").click(function(){
-    $("#header_wrap").hide();
+  $(".header_btns .menu_btn").click(function(){
+    $(".header_wrap").hide();
     $("body").css("overflow","hidden");
-    $("#menu").css("padding-top","10px");
-    $("#menu").slideDown();
+    $(".menu").css("padding-top","10px");
+    $(".menu").slideDown();
   });
-  $("#menu #menu_up .close_btn").click(function(){
+  $(".menu .menu_up .close_btn").click(function(){
     $("body").css({"overflox-x":"hidden","overflow-y":"auto"});
     $("body").css("padding-top","0");
-    $("#menu").hide();
-    $("#header_wrap").show();
+    $(".menu").hide();
+    $(".header_wrap").show();
   });
 
   //dining_menu
@@ -143,7 +143,7 @@ $(function(){
   });
 
   //slide
-  $("#wedding_slide").bxSlider({
+  $(".wedding_slide").bxSlider({
     auto: true,
     pager: true,
     pagerType: 'short',
